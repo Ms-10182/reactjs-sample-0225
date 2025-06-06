@@ -6,9 +6,14 @@ const app = express();
 
 app.use(express.json());
 
-// Configure CORS to allow your frontend
+// Configure CORS to allow requests from any origin in production
 app.use(cors({
-  origin: "http://localhost:5173", // Vite's default port
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    // You can add logic here to restrict origins if needed
+    callback(null, true);
+  },
   credentials: true,
   optionsSuccessStatus: 200
 }));

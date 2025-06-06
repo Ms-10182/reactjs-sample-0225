@@ -13,7 +13,7 @@ const SignUp = ({ toggleAuthMode }) => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:8080/api/v1/user/register', {
+            const response = await fetch('https://reactjs-sample-0225-production.up.railway.app/api/v1/user/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

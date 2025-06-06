@@ -10,7 +10,7 @@ function ListCard({ list, onDelete, onUpdateTasks }) {
     if (content && content.trim()) {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:8080/api/v1/tasks', {
+        const response = await fetch('https://reactjs-sample-0225-production.up.railway.app/api/v1/tasks', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ function ListCard({ list, onDelete, onUpdateTasks }) {
 
   const toggleTask = async (taskId) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/v1/tasks/${taskId}/toggle`, {
+      const response = await fetch(`https://reactjs-sample-0225-production.up.railway.app/api/v1/tasks/${taskId}/toggle`, {
         method: 'PATCH',
         credentials: 'include',
       });
@@ -62,7 +62,7 @@ function ListCard({ list, onDelete, onUpdateTasks }) {
   const deleteTask = async (taskId) => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       try {
-        const response = await fetch(`http://localhost:8080/api/v1/tasks/${taskId}`, {
+        const response = await fetch(`https://reactjs-sample-0225-production.up.railway.app/api/v1/tasks/${taskId}`, {
           method: 'DELETE',
           credentials: 'include',
         });

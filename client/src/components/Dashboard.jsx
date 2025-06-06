@@ -17,7 +17,7 @@ function Dashboard() {
   const fetchLists = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:8080/api/v1/lists', {
+      const response = await fetch('https://reactjs-sample-0225-production.up.railway.app/api/v1/lists', {
         method: 'GET',
         credentials: 'include',
       });
@@ -37,7 +37,7 @@ function Dashboard() {
     const title = prompt('Enter list title:');
     if (title && title.trim()) {
       try {
-        const response = await fetch('http://localhost:8080/api/v1/lists', {
+        const response = await fetch('https://reactjs-sample-0225-production.up.railway.app/api/v1/lists', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ function Dashboard() {
   const deleteList = async (listId) => {
     if (window.confirm('Are you sure you want to delete this list?')) {
       try {
-        const response = await fetch(`http://localhost:8080/api/v1/lists/${listId}`, {
+        const response = await fetch(`https://reactjs-sample-0225-production.up.railway.app/api/v1/lists/${listId}`, {
           method: 'DELETE',
           credentials: 'include',
         });

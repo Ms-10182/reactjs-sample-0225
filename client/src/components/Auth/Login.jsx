@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import './Login.css'; // Assuming you have some styles for the login form
+import './Login.css'; 
 
 const Login = ({ toggleAuthMode }) => {
     const { login } = useContext(AuthContext);
@@ -15,7 +15,7 @@ const Login = ({ toggleAuthMode }) => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:8080/api/v1/user/login', {
+            const response = await fetch('https://reactjs-sample-0225-production.up.railway.app/api/v1/user/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

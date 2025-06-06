@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
     const checkAuthStatus = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/v1/user/', {
+            const response = await fetch('https://reactjs-sample-0225-production.up.railway.app/api/v1/user/', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            await fetch('http://localhost:8080/api/v1/user/logout', {
+            await fetch('https://reactjs-sample-0225-production.up.railway.app/api/v1/user/logout', {
                 method: 'POST',
                 credentials: 'include',
             });
