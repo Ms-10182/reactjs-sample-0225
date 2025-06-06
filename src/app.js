@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Configure CORS to allow your frontend
 app.use(cors({
-  origin: "http://localhost:5173", // Vite's default port
+  origin: "*",
   credentials: true,
   optionsSuccessStatus: 200
 }));
